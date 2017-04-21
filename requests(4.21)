@@ -15,3 +15,12 @@ title = re.findall('color: #3161dd;(.*?)</span>',html.text,re.S) #re.S 表示換
 for each in title:
     print(each)
     
+--------------------抽取圗檔-------------------------
+f = open('test.txt','r')
+html = f.read()
+f.close()
+pic_ur = re.search('<img src="(.*?)" style="display:none"',html).group(1)
+pic = requests.get(pic_ur)
+fp = open('pic\\'+str(2)+'.jpg','wb')
+fp.write(pic.content)
+fp.close()
