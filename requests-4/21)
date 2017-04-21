@@ -5,3 +5,13 @@ hea = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHT
 html = requests.get('http://darren1231.pixnet.net/blog/post/336499256-ai%E6%95%99%E5%AD%B8----chap3%3areinforcement-learning-problem',headers = hea)
 html.encoding = 'utf-8'
 print(html.text)
+"""以下是正則表達式用法
+  findall , search , sub(替換)
+  (.*?) 表示非貪心算法
+  (\d+) 只找數字
+"""
+##title = re.findall('html.text內容隨機 ex color:#66666',html.text,re.S)
+title = re.findall('color: #3161dd;(.*?)</span>',html.text,re.S) #re.S 表示換行讀取
+for each in title:
+    print(each)
+    
