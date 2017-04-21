@@ -1,3 +1,7 @@
 import requests
-html = requests.get('網頁')#獲取網頁原始碼
+##如果爬蟲被擋下來則需要用User-Agent
+##hea = {'網頁->右鍵->檢查->Network->隨機一個->Request headers->copy User-Agent.....貼到此欄'}
+hea = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'}
+html = requests.get('http://darren1231.pixnet.net/blog/post/336499256-ai%E6%95%99%E5%AD%B8----chap3%3areinforcement-learning-problem',headers = hea)
+html.encoding = 'utf-8'
 print(html.text)
