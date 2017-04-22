@@ -28,3 +28,29 @@ selector.xpath('copy xpath')
 /往下層尋找
 提取本文內容: /text()
 提取屬性內容: /@XXX
+
+EX:
+# encoding: utf-8
+
+
+from lxml import etree
+import requests
+html = requests.get("http://darren1231.pixnet.net/blog/post/336499256-ai%E6%95%99%E5%AD%B8----chap3%3areinforcement-learning-problem")
+html.encoding = 'utf-8'
+page = etree.HTML(html.text)
+
+count = 0
+for url in page.xpath(u"//img/@src"):
+    if url.startswith("http:"):
+        print(url)
+        pic = requests.get(url)
+        count = count+1
+        filename = open('pic\\'+str(count)+'.jpg','wb')
+        filename.write(pic.content)
+        filename.close()
+-----------------------------------------------
+
+starts-with(@屬性名稱,屬性字符相同部分)
+string(.)
+
+--------------------------------------------------
