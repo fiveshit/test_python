@@ -1,0 +1,19 @@
+#向網頁提交訊息 Get,post
+#Get是從服務器(service)獲取訊息
+#post 是向服務器傳送訊息,post是將數據放在header上提交數據
+
+#request.post
+#構造表單-提交表單-獲取返回訊息
+
+import requests
+import re
+
+url = '網頁網址'
+data = {'entitles_only':'ture',
+        'page':'1'
+        }
+#向url 提交 data
+html_post = requests.post(url,data = data)
+title = re.findall('正則表達式',html_post,re.S)
+for each in title:
+  print(each)
