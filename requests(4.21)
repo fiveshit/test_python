@@ -1,4 +1,10 @@
 import requests
+import sys
+import re
+import imp
+#強制轉換為uft-8
+imp.reload(sys)
+sys.setfaultencoding("uft-g")
 ##如果爬蟲被擋下來則需要用User-Agent
 ##hea = {'網頁->右鍵->檢查->Network->隨機一個->Request headers->copy User-Agent.....貼到此欄'}
 hea = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'}
