@@ -21,7 +21,7 @@ for each in title:
 先下載lxml函式庫
 from lxml import etree
 selector = etree.HTML(網頁網址)
-selector.xpath()
+selector.xpath('copy xpath')
 
 應用XPath提取內容
 //定位根節點
