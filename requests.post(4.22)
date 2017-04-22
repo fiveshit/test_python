@@ -17,3 +17,14 @@ html_post = requests.post(url,data = data)
 title = re.findall('正則表達式',html_post,re.S)
 for each in title:
   print(each)
+-----------------XPATH(樹狀展開->逐層展開->逐層定位->尋找獨立節點)
+先下載lxml函式庫
+from lxml import etree
+selector = etree.HTML(網頁網址)
+selector.xpath()
+
+應用XPath提取內容
+//定位根節點
+/往下層尋找
+提取本文內容: /text()
+提取屬性內容: /@XXX
