@@ -1,0 +1,3 @@
+from multiprocessing.dummy import Pool
+pool = Pool(4) # 核心數
+results = pool.map(爬蟲函數,網址列表)
