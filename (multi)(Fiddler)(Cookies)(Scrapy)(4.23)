@@ -50,3 +50,10 @@ class Douban(CrawlSpider):
   start_urls = ['website local']
   def parse(self,response):
     pirnt(response.body)
+    
+    
+ltem.py 定義需要抓取並須要後期處理的數據
+settings.py 文件配置Scrapy,從而修改user-agent, 設定爬取時間間隔,設置代理,配置各種中間件等等。
+pipeline.py 用於存放執行後期數據處理的功能,從而使得數據的爬取和處理分開
+
+
