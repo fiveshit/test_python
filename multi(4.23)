@@ -1,3 +1,52 @@
 from multiprocessing.dummy import Pool
 pool = Pool(4) # 核心數
 results = pool.map(爬蟲函數,網址列表)
+
+""" Fiddler introduce """
+PC <-> Fiddler <->service
+         |
+         v
+        copy
+        
+WinConfig -> IE -> visit website -> look data
+
+
+""" Cookies introduce """
+keep sign in 
+
+------------------------------------------
+Fiddler obtain cookies
+
+cookie = {'Cookie': 'XXXXXX'}
+html = requests.get(url,cookies = cookie)
+
+
+
+
+'''  Scrapy introduce '''
+install list:
+lxml
+zope.interface
+Twisted
+pyOpenSSL
+pywin32
+Scrapy
+
+-------------
+Scrapy core code 
+scrapy startproject xxx
+
+import scarpy
+from scrapy.contrib.spiders import CrawlSpider
+from scrapy.http import Request
+from scrapy.seclector import Selector
+xxx = selector.xpath(xxx).extract
+
+ex:
+from scarpy.contrib.spiders import CrawlSpider
+
+class Douban(CrawlSpider):
+  name = "Test"
+  start_urls = ['website local']
+  def parse(self,response):
+    pirnt(response.body)
