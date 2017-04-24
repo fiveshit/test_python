@@ -1,0 +1,16 @@
+''' MongoDB introduce '''
+download MongoDB
+mkdir data
+mongo--dbpath./data
+
+download mongovue 格式化
+install pymongo
+
+ex: import pymongo
+connection = pymongo.MongoClient()
+tdb = connection.名稱
+post_info = tdb.檔名
+
+create directory = {'xxx':'xx'}
+post_info.insert(directory)  # insert
+post_info.remove(XXX) # delete
