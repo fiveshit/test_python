@@ -1,0 +1,19 @@
+------Redis introduce----------
+key-value data warehouse
+
+install:
+pip3 install scrapy-redis
+
+execute:
+redis-server redis.conf
+flush memory:
+redis-cli flushdb
+
+----Scrapy set Redis ----
+settings.py:
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER_PERSIST = True
+SCHEDULER_QUEUE_CLASS = scrapy_redis.queue.SpiderPriorityQueue'
+REDIS_URL = None
+REDIS_HOST = 'computer IP'
+REDIS_PORT = 6379
