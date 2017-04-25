@@ -11,6 +11,11 @@ connection = pymongo.MongoClient()
 tdb = connection.名稱
 post_info = tdb.檔名
 
+---如果出現無法連接問題---
+cmd的mongodb底下mongod 會出現問題點:
+可能是 c:\data\db 需自行創建
+
+
 create directory = {'xxx':'xx'}
 post_info.insert(directory)  # insert
 post_info.remove(XXX) # delete
