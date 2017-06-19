@@ -1,0 +1,42 @@
+def f(x):
+  return x*x
+map(f,[1,2,3,4])
+'''
+[1,4,9,16]
+'''
+
+
+
+from functools import reduce
+#reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)
+def fn(x,y):
+  retrun 10*x+y
+reduce(fn,[1,2,3])
+'''
+123
+'''
+
+
+練習:將輸入的字母變成數字
+def chrforint(s):
+  return {'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}[s]
+def str2int(s):
+  return reduce(lambda x,y:x * 10 + y,map(chrforint,s))
+str2int('123')  
+'''
+123
+'''
+
+
+
+練習:將'123.456' > 123.456
+def chr_int(s):
+	return {'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}[s]
+
+def str2float(s):
+	L = s.split('.')
+	a = reduce(lambda x,y:x*10+y,map(chr_int,L[0]))
+	b = reduce(lambda x,y:x*10+y,map(chr_int,L[1]))/1000
+	return  a+b
+  
+ 
