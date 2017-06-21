@@ -16,3 +16,13 @@ f1()
 -14
 '''
 
+
+def test(n):
+	return lambda x: x * n
+	
+a = test(12)
+a(2)
+
+'''
+24
+'''
