@@ -1,0 +1,18 @@
+def adder(*args):
+	def minus():
+		x = 1
+		for _ in args:
+			x = x - _
+		return x
+	def add():
+		y = 1
+		for _ in args:
+			y = y + _
+		return y
+	return minus,add
+f1,f2 = adder(1,2,3,4,5)
+f1()
+'''
+-14
+'''
+
