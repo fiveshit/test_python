@@ -26,3 +26,21 @@ a(2)
 '''
 24
 '''
+
+裝飾器主要是用來讓人知道哪個函數被呼叫
+ex
+def a(n):
+	def b(*args, **kk):
+		print('%s was called'%n.__name__)
+		return n(*args,**kk)
+	return b
+@a
+def c():
+	print('run')
+>> c()
+
+'''
+c was called 
+run
+
+'''
