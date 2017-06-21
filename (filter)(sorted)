@@ -1,0 +1,31 @@
+filter 是過濾序列，與map相似，不同的地方是filter的返回值是 Ture or False 可以用來過濾。
+ex:
+
+
+def odd(m):
+  return m % 2 == 1
+  
+a = range(10)
+b = list(a)
+filter(odd,b)
+
+'''
+2 4 6 8 
+'''
+
+sorted 是排序法，可以將A~Z或數字進行快速小到大或大到小的排序
+a = [1,2,3,4,5]
+sorted(a,key = reversed = True)
+
+'''
+[5,4,3,2,1]
+'''
+
+
+b = [-1,4,-2,66]
+
+sorted(b,key = abs)
+
+''
+[-1,-2,4,66]
+'''
