@@ -1,0 +1,31 @@
+class Student(object):
+ def __init__(self,name,age):
+  self.name = name
+  self.age = age
+ def print_name(self):
+  print('%s : %d' %(self.name, self.age))
+
+
+>> s  = Student('joe',24)
+>> s.print_name()
+  
+  if 
+  
+>> s = Student
+>> s.name = 'joe'
+>> s.age = 24
+>> s.print_name()
+error
+  
+  
+  
+class Student(object):
+  __slots__ =  ('name','age')
+  
+  
+>> s.Student
+>> s.name = 'joe'
+>> s.age = 24
+
+
+
