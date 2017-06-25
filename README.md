@@ -1,2 +1,2 @@
-# test_python_insect
+# test_python
 practice python
