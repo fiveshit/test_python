@@ -23,7 +23,7 @@ class Student(object):
   __slots__ =  ('name','age')
   
   
->> s.Student
+>> s.Student()
 >> s.name = 'joe'
 >> s.age = 24
 
