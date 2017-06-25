@@ -1,0 +1,37 @@
+class Student(object):
+
+    def get_score(self):
+         return self.sc
+
+    def set_score(self, value):
+        if not isinstance(value, int):
+            raise ValueError('score must be an integer!')
+        if value < 0 or value > 100:
+            raise ValueError('score must between 0 ~ 100!')
+        self.sc = value
+        
+>> s = Student()
+>> s.set_score = 10
+>> s.get_score
+
+
+使用@property，可以檢察參數又可以直接調用類的方式
+
+class Student(object):
+
+    @property
+    def score(self):
+        return self._score
+
+    @score.setter
+    def score(self, value):
+        if not isinstance(value, int):
+            raise ValueError('score must be an integer!')
+        if value < 0 or value > 100:
+            raise ValueError('score must between 0 ~ 100!')
+        self._score = value
+       
+       
+ >> s = Student()
+ >> s.score = 10
+ >> s.score
