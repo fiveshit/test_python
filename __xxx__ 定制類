@@ -1,0 +1,111 @@
+__str__ 
+ex: 
+class Student(object):
+  def __init__(self,name):
+    self.name = name
+   def __str__(self):
+    return 'name : %s' %self.name
+ 
+>> s = Student('Joe')
+>> s
+name : Joe
+
+
+
+__iter__
+
+ex:
+class Fib(object):
+  def __init__(self):
+    self.a = 0
+    self.b = 1
+  def __iter__(self):
+    return self
+  def __next__(self)
+    self.a,self.b = self.b, self.a + self.b
+    if self.a > 10000:
+      raise StopIteration()
+    return self.a
+    
+>> for n in Fib()
+      print(n)
+ '''
+ 1
+ 1
+ 2
+ 3
+ 5
+ .
+ .
+ .
+ '''
+__getitem__
+ex:
+class Fib(object):
+    def __getitem__(self,n):
+        a, b = 1, 1
+        for x in range(n):
+            a, b = b ,a + b
+        return a
+        
+f = Fib()
+f[0]
+'''
+1
+'''
+
+
+__getattr__ 
+正常情况下，當調用類的方法或屬性時，如果不存在，就會報出錯誤
+使用__getattr__則可避免
+
+ex:
+class Student(object):
+  def __init__(self):
+    self.name = 'Joe'
+  def __getattr__(self,attr):
+    if attr == 'score':
+      return 99
+
+s = Student()
+s.name
+'''
+Joe
+'''
+s.score
+'''
+99
+'''
+
+class Student(object):
+	def __getattr__(self,attr):
+		if attr == 'age':
+			return lambda: 25
+
+s = Student()
+s.age()
+'''
+25
+'''
+
+
+__call__
+
+ex:
+class Student(object):
+    def __init__(self, name):
+        self.name = name
+
+    def __call__(self):
+        print('My name is %s.' % self.name)
+        
+s = Student('Joe')
+s()
+'''
+My name is Joe
+'''
+
+
+
+
+      
