@@ -43,4 +43,6 @@
       pdb.set_trace() # 運作到這裡會自動暫停
       print(10 / n)
       
-      
+    python3 xxx.py
+    
+    可以使用 p查看變量或n繼續執行
