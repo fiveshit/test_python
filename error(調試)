@@ -1,0 +1,46 @@
+通常程式要一次就成功的機率不到1%，所以需要debug，介紹四種debug的語法；
+-----------------------
+暴力法:
+  直接用print將可能錯誤的值顯示出來，但之後還需要刪除，也會造成多於的垃圾訊息。
+----------------------
+斷言:
+  EX:
+    def foo(s):
+      n = int(s)
+      assert n != 0, 'n is zero!'
+      return 10 / n
+
+    def main():
+      foo('0')
+      
+ assert 的意思是，表達式 n != 0 應該是True ，否則後面的程式可能會出錯
+ 如果斷言失敗，assert語句本身會拋出AssertionError
+ 
+ 執行斷言時可用 python3 -O xxx.py 將斷言關閉，斷言在程式裡就如同pass
+ ----------------------
+ loggoing:
+  和assert比，logging不會拋出錯誤，而且可以輸出文件
+  EX:
+    import logging
+
+    s = '0'
+    n = int(s)
+    logging.info('n = %d' % n)
+    print(10 / n)
+    logging.basicConfig(level=logging.INFO)
+    
+    有debug，info，warning，error等幾個级别，當我們指定level=INFO時，logging.debug就不起作用了。
+    同理，指定level=WARNING後，debug和info就不起作用了。這樣的話，你可以放心的輸出不同级别的訊息
+    ，也不用删除，最後統一控制輸出哪個级别的訊息。
+ ---------------------- 
+ pdb:
+    pdb.set_trace()
+    EX:
+      import pdb
+
+      s = '0'
+      n = int(s)
+      pdb.set_trace() # 運作到這裡會自動暫停
+      print(10 / n)
+      
+      
