@@ -1,0 +1,32 @@
+直接在內存中讀寫
+
+ex:
+from io import StringIO
+f = StringIO()
+f.write('a')
+
+'''
+1
+'''
+
+f.getvalue()
+
+'''
+a
+'''
+
+
+ex:
+
+from io import BytesIO
+
+f = BytesIO()
+f.write('中文'.encode('utf-8'))
+
+'''
+6
+'''
+f.getvalue()
+'''
+b'\xe4\xb8\xad\xe6\x96\x87'
+'''
