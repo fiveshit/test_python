@@ -1,0 +1,25 @@
+import pickle 
+
+存入
+data = {1:'1',2:'2',3:'3'}
+with open('test.pickle','wb') as file:
+  pickle.dump(data,file)
+  
+  
+取出
+with open('test.pickle','rb') as file:
+  pickle.load(file)
+  
+ 
+impport json
+
+存入
+d = dict(A = 'A',B = 'B', C = 'C')
+json.dumps(d)
+
+取出
+
+data = {1:'1',2:'2',3:'3'}
+json.loads(data)
+
+
