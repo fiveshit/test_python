@@ -25,3 +25,26 @@ OrderedDict : 字典dict是沒有順序的，如果要讓dict有順序即可使�
 {'c': 3, 'a': 1, 'b': 2}
 >>>p = OrderedDict([('a',1),('b',2),('c',3)])
 OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+
+
+先進先出
+from collections import OrderedDict
+
+class LastUpdatedOrderedDict(OrderedDict):
+    def __init__(self, capacity):
+        super(LastUpdatedOrderedDict, self).__init__()
+        self._capacity = capacity
+    def __setitem__(self,  key, value):
+        containsKey = 1 if key in self else 0
+        print(self)
+        if len(self) - containsKey >= self._capacity: 
+            print(len(self))
+            last = self.popitem(last = False)  # 指定刪除
+            print('remove', last)
+        if containsKey:
+            del self[key]
+            print('set:',(key, value))
+        else:
+            print('add:',(key, value))
+        OrderedDict.__setitem__(self, key, value) #讓字典照順序
+        
