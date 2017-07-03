@@ -1,0 +1,27 @@
+namedtuple : 用來創建一個自定義的tuple對象
+from collections import namedtuple
+Point = nametuple('Point',('x','y'))
+p = Point(1,2)
+>>>p.x 
+1
+>>>p.y
+2
+
+deque : 高效率實現插入刪除操作的雙向列表
+
+from collections import deque
+p = deque(['1','2','3'])
+p.append('4')
+>>>p
+deque(['1','2','3','4'])
+p.appendleft('0')
+>>>p
+deque(['0','1','2','3','4'])
+
+
+OrderedDict : 字典dict是沒有順序的，如果要讓dict有順序即可使用OrderedDict的Key会按照插入的顺序排列
+
+>>>p = dict([('a',1),('b',2),('c',3)])
+{'c': 3, 'a': 1, 'b': 2}
+>>>p = OrderedDict([('a',1),('b',2),('c',3)])
+OrderedDict([('a', 1), ('b', 2), ('c', 3)])
