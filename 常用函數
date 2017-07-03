@@ -48,3 +48,16 @@ class LastUpdatedOrderedDict(OrderedDict):
             print('add:',(key, value))
         OrderedDict.__setitem__(self, key, value) #讓字典照順序
         
+
+
+Counter : 是一個簡單的計數器
+
+from collections import Counter
+c = Counter()
+for ch in 'apple':
+    c[ch] = c[ch] + 1
+    
+ '''
+ Counter({'p': 2, 'l': 1, 'a': 1, 'e': 1})
+ '''
+ 
